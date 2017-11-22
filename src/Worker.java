@@ -1,11 +1,13 @@
 public class Worker extends Employee implements Tasks {
 
-	private int percentageHappiness;
+	private double salary;
 	
-	public Worker(String firstName, String secondName, String jobTitle, int yearOfBirth, char gender, double salary, int percentageHappiness) {
-		super(firstName, secondName, jobTitle, yearOfBirth, gender, salary);
-		this.percentageHappiness = percentageHappiness;
+	public Worker(String firstName, String secondName, String jobTitle, double salary) {
+		super(firstName, secondName, jobTitle);
+		this.salary = salary;
 	}
+	
+	
 
 	@Override
 	public void presentYourself(String firstName, String secondName, String jobTitle) {
@@ -19,31 +21,34 @@ public class Worker extends Employee implements Tasks {
 		
 	}
 
-	public double getPercentageHappiness() {
-		return percentageHappiness;
-	}
-
-	public void setPercentageHappiness(int percentageHappiness) {
-		this.percentageHappiness = percentageHappiness;
-	}
 
 	@Override
 	public String punctualSaying() {
 		return "Yes! I am earlier in work than I Should be";
 	}
 
-	@Override
-	public String toString() {
-		return super.toString() + "Worker [percentageHappiness=" + percentageHappiness + "]";
+
+
+	public double getSalary() {
+		return salary;
 	}
 
-	/*
-	@Override
-	public void workOnWeekends() {
-		if (LocalDate.now() )
-		
+
+
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
-	*/
+
+
+
+	@Override
+	public String toString() {
+		return super.toString() + ", salary=" + salary + "]";
+	}
+
+	
+
+	
 	
 
 }

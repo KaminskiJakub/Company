@@ -1,9 +1,11 @@
 
 public class Manager extends Worker implements Tasks, Orders {
 
-	public Manager(String firstName, String secondName, String jobTitle, int yearOfBirth, char gender, double salary, int percentageHappiness) {
-		super(firstName, secondName, jobTitle, yearOfBirth, gender, salary, percentageHappiness);
-	
+	private int percentageHappiness;
+
+	public Manager(String firstName, String secondName, String jobTitle, double salary, int percentageHappiness) {
+		super(firstName, secondName, jobTitle, salary);
+		this.percentageHappiness = percentageHappiness;
 	}
 
 	@Override
@@ -28,6 +30,16 @@ public class Manager extends Worker implements Tasks, Orders {
 	public void giveWarning() {
 		System.out.println("I can not tolerate that kind of behavior. You need to change Your attitude.");
 		
+	}
+
+
+	public int getPercentageHappiness() {
+		return percentageHappiness;
+	}
+
+
+	public void setPercentageHappiness(int percentageHappiness) {
+		this.percentageHappiness = percentageHappiness;
 	}
 
 	
